@@ -10,9 +10,14 @@ def login():
     p_word=st.text_input('Password', type='password')
     lg=st.button('Login', type='primary')
     if lg:
-        if u_name in admin and p_word==admin[u_name]:
-            st.session_state.logged=True
-            st.rerun()
+        if u_name in admin:
+            if p_word==admin[u_name]:
+                st.session_state.logged=True
+                st.rerun()
+            else:
+                st.error('Wrong Password')
+        else:
+            st.error('Wrong User Name')
 def inse():
     name=st.text_input('Name')
     ph=st.number_input('Phone', min_value=0)
@@ -130,4 +135,5 @@ if st.session_state.logged:
         upd()
 else:
     login()
+
 
