@@ -22,7 +22,7 @@ def inse():
     name=st.text_input('Name')
     ph=st.number_input('Phone', min_value=0)
     db=st.date_input('DOB')
-    g=st.radio('Gender',['Mail','Femail'])
+    g=st.radio('Gender',['Male','Female'])
     ad=st.text_area('Address')
     po= st.file_uploader('Photo', type=['jpg', 'png', 'svg'])
     z=st.button('Add', type='primary')
@@ -135,5 +135,6 @@ if st.session_state.logged:
         upd()
 else:
     login()
+
 
 
